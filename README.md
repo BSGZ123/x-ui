@@ -6,10 +6,15 @@
 #### 目前主要问题
 - 旧协议xtls-rprx-direct在1.8.x版本已经弃用，x-ui还在使用，暂时解决办法:降级至1.7.5版本或不使用该协议
 #### 原仓库基本放弃维护
+
+2024-12-24
+- 更改trojan:可以关闭tls配置并可选使用nginx对外代理
+
 2024-1-4
 - 更新至 Go 1.18
 - 更新相关依赖项
 - 更新Dockerfile中的Debian版本从11-slim到12.0-slim，解决新版本GLIBC找不到的问题
+
 
 # 功能介绍
 
@@ -26,12 +31,12 @@
 # 安装&升级
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/BSGZ123/x-ui/master/install.sh)
 ```
 
 ## 手动安装&升级
 
-1. 首先从 https://github.com/vaxilu/x-ui/releases 下载最新的压缩包，一般选择 `amd64`架构
+1. 首先从 https://github.com/BSGZ123/x-ui/releases 下载最新的压缩包，一般选择 `amd64`架构
 2. 然后将这个压缩包上传到服务器的 `/root/`目录下，并使用 `root`用户登录服务器
 
 > 如果你的服务器 cpu 架构不是 `amd64`，自行将命令中的 `amd64`替换为其他架构
