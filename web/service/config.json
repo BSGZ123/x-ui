@@ -25,7 +25,11 @@
     },
     {
       "protocol": "blackhole",
-      "settings": {},
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
       "tag": "blocked"
     }
   ],
@@ -36,6 +40,7 @@
     }
   },
   "routing": {
+    "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
         "inboundTag": [
@@ -45,7 +50,16 @@
         "type": "field"
       },
       {
+        "type": "field",
+        "domain": [
+          "geosite:category-ads-all",
+          "geosite:geolocation-cn"
+        ],
+        "outboundTag": "blocked"
+      },
+      {
         "ip": [
+          "geoip:cn",
           "geoip:private"
         ],
         "outboundTag": "blocked",

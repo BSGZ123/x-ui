@@ -6,11 +6,11 @@
 #### 目前主要问题
 - 旧协议xtls-rprx-direct在1.8.x版本已经弃用，x-ui还在使用，暂时解决办法:降级至1.7.5版本或不使用该协议
 #### 原仓库基本放弃维护
+2024-12
+- 支持VLess 新协议xtls-rprx-vision(B333.0.1)25
+- 更改trojan:可以关闭tls配置并可选使用nginx对外代理24
 
-2024-12-24
-- 更改trojan:可以关闭tls配置并可选使用nginx对外代理
-
-2024-1-4
+2024-1
 - 更新至 Go 1.18
 - 更新相关依赖项
 - 更新Dockerfile中的Debian版本从11-slim到12.0-slim，解决新版本GLIBC找不到的问题
@@ -29,6 +29,8 @@
 - 更多高级配置项，详见面板
 
 # 安装&升级
+go mod tidy
+
 
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/BSGZ123/x-ui/master/install.sh)
