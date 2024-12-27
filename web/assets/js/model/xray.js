@@ -1010,6 +1010,7 @@ class Inbound extends XrayCommonClass {
             if (!ObjectUtil.isEmpty(this.stream.tls.server)) {
                 address = this.stream.tls.server;
                 params.set("sni", address);
+                params.set("flow", this.settings.vlesses[0].flow);
             }
         }
 
@@ -1214,12 +1215,11 @@ Inbound.VLESSSettings = class extends Inbound.Settings {
 };
 Inbound.VLESSSettings.VLESS = class extends XrayCommonClass {
 
-    constructor(id = RandomUtil.randomUUID(), flow = FLOW_VISION.FLOWVISION) {
+    constructor(id = RandomUtil.randomUUID(), flow = FLOW_CONTROL.DIRECT) {
         super();
         this.id = id;
         this.flow = flow;
     }
-
     static fromJson(json={}) {
         return new Inbound.VLESSSettings.VLESS(
             json.id,

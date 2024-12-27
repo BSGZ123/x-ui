@@ -7,6 +7,7 @@
 - 旧协议xtls-rprx-direct在1.8.x版本已经弃用，x-ui还在使用，暂时解决办法:降级至1.7.5版本或不使用该协议
 #### 原仓库基本放弃维护
 2024-12
+- 添加VLESS-TCP-XTLS-Vision27 bugfix: 二维码少xtls-rprx-vision 参数
 - 支持VLess 新协议xtls-rprx-vision(B333.0.1)25
 - 更改trojan:可以关闭tls配置并可选使用nginx对外代理24
 
